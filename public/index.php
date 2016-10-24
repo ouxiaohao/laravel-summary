@@ -56,3 +56,10 @@ $response = $kernel->handle(
 $response->send();
 
 $kernel->terminate($request, $response);
+
+function p($data)
+{
+    echo '<pre>';
+    print_r($data);
+    echo '</pre>';
+}
