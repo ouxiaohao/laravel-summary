@@ -5,6 +5,6 @@
     <title>laravel学习摘要</title>
 </head>
 <body>
-    hello world
+    {{$name}}
 </body>
 </html>
