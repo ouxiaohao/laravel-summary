@@ -8,7 +8,6 @@ class IndexController extends Controller
     public function index()
     {
         $data = DB::table('student')->where('id',1)->value('name');
-
-        return view('home.index',array('name'=>$data));
+        return view('home.index.index',array('name'=>$data));
     }
 }
