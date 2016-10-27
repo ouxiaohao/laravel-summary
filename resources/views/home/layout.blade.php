@@ -7,10 +7,12 @@
 </head>
 <body>
     @include('home.partials.header')
+    <div class="container">
+        <p>学生管理系统</p>
+        @include('home.partials.sidebar')
 
-    <div class="main">
-        @section('content')
-            <p>学生管理系统:</p>
+        @section('main')
+
         @show
     </div>
 
