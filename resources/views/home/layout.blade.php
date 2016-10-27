@@ -10,7 +10,7 @@
 
     <div class="main">
         @section('content')
-            <p>输出:</p>
+            <p>学生管理系统:</p>
         @show
     </div>
 
