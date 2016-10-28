@@ -1,7 +1,6 @@
 @extends('home.layout')
 
-@section('title', '学习摘要')
-
 @section('main')
+    @include('home.student.partials.sidebar')
 
 @endsection

@@ -8,9 +8,6 @@
 <body>
     @include('home.partials.header')
     <div class="container">
-        <p>学生管理系统</p>
-        @include('home.partials.sidebar')
-
         @section('main')
 
         @show
