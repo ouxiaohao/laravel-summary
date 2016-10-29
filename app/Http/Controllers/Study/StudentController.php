@@ -26,6 +26,20 @@ class StudentController extends Controller
     {
         if ($request->isMethod('post'))
         {
+            $this->validate($request, [
+                'Student.name' => 'required|max:4|unique:students,name',
+                'Student.class' => 'required',
+                'Student.score' => 'required|max:150|integer',
+            ],[
+                'required' => ':attribute 必填',
+                'max' => ':attribute 不能超过:max',
+                'unique' => ':attribute 已存在',
+                'integer' => ':attribute 必须为数字',
+            ],[
+                'Student.name' => '姓名',
+                'Student.class' => '班级',
+                'Student.score' => '分数',
+            ]);
             $data = $request->input('Student');
             $res = Student::create($data);
             if ($res) return back()->withInput()->with('success','添加成功');
