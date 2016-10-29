@@ -1,5 +1,5 @@
 <?php
-namespace App\Http\Controllers\Home;
+namespace App\Http\Controllers\Study;
 
 use App\Http\Controllers\Controller;
 use App\Models\Student;
@@ -10,6 +10,6 @@ class IndexController extends Controller
         $student = new Student();
         $data = $student->getData();
     
-        return view('home.index.index',['data' => $data]);
+        return view('study.index.index',['data' => $data]);
     }
 }

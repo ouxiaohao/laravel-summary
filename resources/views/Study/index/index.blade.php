@@ -1,4 +1,4 @@
-@extends('home.layout')
+@extends('study.layout')
 
 @section('title', '学习摘要')
 

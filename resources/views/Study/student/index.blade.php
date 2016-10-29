@@ -1,4 +1,4 @@
-@extends('home.student.partials.layout')
+@extends('study.student.partials.layout')
 
 @section('title', '学生管理系统')
 

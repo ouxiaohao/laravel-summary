@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Home;
+namespace App\Http\Controllers\Study;
 
 use App\Http\Controllers\Controller;
 use App\Models\Student;
@@ -15,7 +15,7 @@ class StudentController extends Controller
     {
         $student = Student::paginate(6);
 
-        return view('home.student.index',['data' => $student]);
+        return view('study.student.index',['data' => $student]);
 
     }
 
@@ -31,7 +31,7 @@ class StudentController extends Controller
             if ($res) return redirect('student/index');
         }
 
-        return view('home.student.add');
+        return view('study.student.add');
     }
     /*
      * 修改数据
@@ -49,7 +49,7 @@ class StudentController extends Controller
         }
         $data = Student::find($id);
 
-        return view('home.student.edit',['data' => $data]);
+        return view('study.student.edit',['data' => $data]);
     }
     /*
      * 删除数据
