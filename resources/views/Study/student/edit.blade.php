@@ -35,8 +35,10 @@
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                     <button type="submit" class="btn btn-default">提交</button>
+                    <a href="{{ url('student/index') }}" class="btn btn-default">返回</a>
                 </div>
             </div>
         </form>
+        @include('study.partials.message')
     </main>
 @endsection

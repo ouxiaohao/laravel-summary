@@ -28,9 +28,9 @@ class StudentController extends Controller
         {
             $data = $request->input('Student');
             $res = Student::create($data);
-            if ($res) return redirect('student/index');
+            if ($res) return back()->withInput()->with('success','添加成功');
 //            如果出错，将上次请求输入存储到一次性session
-            return back()->withInput();
+            return back()->withInput()->with('error','添加失败');
         }
 
         return view('study.student.add');
@@ -44,9 +44,9 @@ class StudentController extends Controller
         {
             $data  = $request->input('Student');
             $res = Student::where('id',$id)->update($data);
-            if ($res)  return redirect('student/index');
+            if ($res)  return back()->withInput()->with('success','修改成功');
 //            如果出错，将上次请求输入存储到一次性session
-            return back()->withInput();
+            return back()->withInput()->with('error','修改失败');
 
         }
         $data = Student::find($id);
