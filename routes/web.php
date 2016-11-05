@@ -26,7 +26,8 @@ Route::get('student/del/{id}','Study\StudentController@del');
 
 //上传文件
 Route::any('file/index','Study\FileController@index');
-
+//发送邮件
+Route::any('mail/index', 'Study\MailController@index');
 
 
 
