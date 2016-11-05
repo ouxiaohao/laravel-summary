@@ -13,6 +13,7 @@ class StudentController extends Controller
      */
     public function index()
     {
+        // 分页
         $student = Student::paginate(6);
 
         return view('study.student.index',['data' => $student]);
@@ -23,6 +24,40 @@ class StudentController extends Controller
      * 添加数据
      */
     public function add(Request $request)
+    {
+        // 判断是否请求
+        if ($request->isMethod('post'))
+        {
+            // 控制器验证
+            $this->validate($request, [
+                'Student.name' => 'required|max:4|unique:students,name',
+                'Student.class' => 'required',
+                'Student.score' => 'required|max:150|integer',
+            ],[
+                'required' => ':attribute 必填',
+                'max' => ':attribute 不能超过:max',
+                'unique' => ':attribute 已存在',
+                'integer' => ':attribute 必须为数字',
+            ],[
+                'Student.name' => '姓名',
+                'Student.class' => '班级',
+                'Student.score' => '分数',
+            ]);
+            // 获取请求数据
+            $data = $request->input('Student');
+            // 返回当前模型对象
+            $res = Student::create($data);
+            if ($res) return back()->withInput()->with('success','添加成功');
+//            如果出错，将上次请求输入存储到一次性session
+            return back()->withInput()->with('error','添加失败');
+        }
+
+        return view('study.student.add');
+    }
+    /*
+     * 修改数据
+     */
+    public function edit(Request $request, $id)
     {
         if ($request->isMethod('post'))
         {
@@ -40,22 +75,6 @@ class StudentController extends Controller
                 'Student.class' => '班级',
                 'Student.score' => '分数',
             ]);
-            $data = $request->input('Student');
-            $res = Student::create($data);
-            if ($res) return back()->withInput()->with('success','添加成功');
-//            如果出错，将上次请求输入存储到一次性session
-            return back()->withInput()->with('error','添加失败');
-        }
-
-        return view('study.student.add');
-    }
-    /*
-     * 修改数据
-     */
-    public function edit(Request $request, $id)
-    {
-        if ($request->isMethod('post'))
-        {
             $data  = $request->input('Student');
             $res = Student::where('id',$id)->update($data);
             if ($res)  return back()->withInput()->with('success','修改成功');

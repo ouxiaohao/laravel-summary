@@ -14,13 +14,43 @@
 Route::get('/', 'Study\IndexController@index');
 
 
-
+//登录注册认证
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-
+//学生管理系统
 Route::get('student/index','Study\StudentController@index');
 Route::match(['get','post'],'student/add','Study\StudentController@add');
 Route::match(['get','post'],'student/edit/{id}','Study\StudentController@edit');
 Route::get('student/del/{id}','Study\StudentController@del');
+
+//上传文件
+Route::any('file/index','Study\FileController@index');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

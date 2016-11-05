@@ -1,5 +1,7 @@
 @extends('study.student.partials.layout')
 
+@section('title', '学生管理系统-添加学生')
+
 @section('main')
     @parent
     <main>
