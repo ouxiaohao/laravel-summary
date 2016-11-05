@@ -16,7 +16,6 @@ Route::get('/', 'Study\IndexController@index');
 
 //登录注册认证
 Auth::routes();
-
 Route::get('/home', 'HomeController@index');
 
 //学生管理系统

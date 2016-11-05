@@ -15,6 +15,10 @@
                     </li>
                 </ul>
             </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="{{ url('') }}"> 登录</a></li>
+                <li><a href="#"> 注册</a></li>
+            </ul>
         </div>
     </nav>
 </header>
