@@ -1,4 +1,7 @@
 # 欧浩博客
+
+#主要功能
+
 博客地址：http://www.ouxiaohao.com
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
 [![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
