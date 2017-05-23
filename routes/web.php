@@ -30,6 +30,10 @@ Route::any('file/index','Study\FileController@index');
 Route::any('mail/index', 'Study\MailController@index');
 
 
+//index module
+Route::get('index/index','Index\IndexController@index');
+
+
 
 
 
